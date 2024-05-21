@@ -2,7 +2,9 @@ npm i @radix-ui/react-navigation-menu
 
 /app/components/navigation
 
-import \* as NavigationMenu from '@radix-ui/react-navigation-menu';
+```
+"use client";
+import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 
 export default function NavMenu() {
 return (
@@ -57,3 +59,5 @@ return (
 
       </NavigationMenu.Root>
       );}
+
+```
