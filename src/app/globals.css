@@ -2,32 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  font-family: "Courier New", Courier, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+h1 {
+  text-align: center;
+  display: block;
+  padding: 5vh;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.NavigationMenuList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2vh 5vw;
+  padding: 3vh 0vw;
+  border: 2px solid black;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.NavigationMenuTrigger {
+  min-width: 200px;
+}
+
+.NavigationMenuLink {
+  width: 200px;
+  display: block;
+  text-align: center;
+}
+
+.NavigationMenuLink:hover,
+.NavigationMenuTrigger:hover {
+  text-decoration: underline;
+}
+
+.List-one {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: flex-start;
+  margin-left: 18vw;
+  position: fixed;
+}
+
+.List-two {
+  display: flex;
+  flex-direction: column;
+  margin-left: 47vw;
+  position: fixed;
+}
+
+.Link {
+  margin: 10px 0px;
+  background-color: white;
+  padding: 10px;
+}
+
+.Link:hover {
+  text-decoration: underline;
 }
