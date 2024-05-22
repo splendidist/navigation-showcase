@@ -80,22 +80,13 @@ export default function App() {
       <p id="transcript">Transcript: {transcript}</p>
       <p>Listening: {listening ? "yes" : "no"}</p>
       <div className="flex items-center">
-        <button
-          className="bg-purple-500 text-white p-2 m-3"
-          onClick={handleStart}
-        >
+        <button className="bg-black text-white p-2 m-3" onClick={handleStart}>
           Start
         </button>
-        <button
-          className="bg-purple-500 text-white p-2 mx-3"
-          onClick={handleStop}
-        >
+        <button className="bg-black text-white p-2 mx-3" onClick={handleStop}>
           Stop
         </button>
-        <button
-          className="bg-purple-500 text-white p-2 mx-3 "
-          onClick={handleReset}
-        >
+        <button className="bg-black text-white p-2 mx-3 " onClick={handleReset}>
           Reset
         </button>
       </div>
