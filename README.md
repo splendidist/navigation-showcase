@@ -1,6 +1,6 @@
 npm i @radix-ui/react-navigation-menu
 
-/app/components/navigation
+/app/components/navigation.jsx
 
 ```
 "use client";
