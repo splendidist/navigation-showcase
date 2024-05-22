@@ -6,9 +6,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <h1>Navigation Menu Demo</h1>
+        <div className="flex justify-evenly mt-5">
+          <h1>Navigation Menu Demo</h1>
+          <App />
+        </div>
+
         <NavMenu />
-        <App />
+
         {children}
       </body>
     </html>

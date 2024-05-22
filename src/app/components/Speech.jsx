@@ -8,6 +8,7 @@ import SpeechRecognition, {
 export default function App() {
   const [redirectUrl, setRedirectUrl] = useState("");
 
+  //set user commands for voice navigation, and redirect to that page
   const commands = [
     {
       command: ["go to *", "open *"],
@@ -16,7 +17,10 @@ export default function App() {
     },
   ];
 
+  //array of pages
   const pages = ["home", "red", "yellow", "blue", "green", "orange", "purple"];
+
+  //set pages to their routes
   const urls = {
     home: "/",
     red: "/red",
@@ -27,6 +31,7 @@ export default function App() {
     purple: "/purple",
   };
 
+  //properties and function returned by useSpeechRecognition
   const {
     transcript,
     listening,
@@ -34,6 +39,7 @@ export default function App() {
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition({ commands });
 
+  //if page exists, redirct to page, else do nothing
   useEffect(() => {
     if (redirectUrl) {
       if (pages.includes(redirectUrl)) {
@@ -45,32 +51,55 @@ export default function App() {
     }
   }, [redirectUrl]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  //if browser doesnt support speech recognition, do nothing
   if (!browserSupportsSpeechRecognition) {
     return null;
   }
 
+  //button events
+  //start voice navigation
   const handleStart = () => {
     console.log("Starting listening");
     SpeechRecognition.startListening({ continuous: true });
   };
 
+  //stop voice navigation
   const handleStop = () => {
     console.log("Stopping listening");
     SpeechRecognition.stopListening();
   };
 
+  //reset voice navigation
   const handleReset = () => {
     console.log("Resetting transcript");
     resetTranscript();
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <p id="transcript">Transcript: {transcript}</p>
       <p>Listening: {listening ? "yes" : "no"}</p>
-      <button onClick={handleStart}>Start</button>
-      <button onClick={handleStop}>Stop</button>
-      <button onClick={handleReset}>Reset</button>
+      <div className="flex items-center">
+        <button
+          className="bg-purple-500 text-white p-2 m-3"
+          onClick={handleStart}
+        >
+          Start
+        </button>
+        <button
+          className="bg-purple-500 text-white p-2 mx-3"
+          onClick={handleStop}
+        >
+          Stop
+        </button>
+        <button
+          className="bg-purple-500 text-white p-2 mx-3 "
+          onClick={handleReset}
+        >
+          Reset
+        </button>
+      </div>
+
       {redirectUrl && !pages.includes(redirectUrl) && (
         <p>Could not find page: {redirectUrl}</p>
       )}
