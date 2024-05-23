@@ -5,7 +5,7 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-export default function App() {
+export default function Speech() {
   const [redirectUrl, setRedirectUrl] = useState("");
 
   //set user commands for voice navigation, and redirect to that page

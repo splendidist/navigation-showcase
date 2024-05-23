@@ -1,4 +1,14 @@
 ##Radix Navigation Menu
+
+##What is it?
+
+##Use Cases
+
+- Navigation menu at top of ecommerce, blog, or porfolio webpage, so the user can navigate the whole webpage from one place.
+- A second navigation menu on a page e.g /post, to navigate to more specific pages e.g /post/[id]
+
+###How to install and use
+
 npm i @radix-ui/react-navigation-menu
 
 /app/components/navigation.jsx
@@ -102,6 +112,12 @@ As of May 2021, the following browser that support the Web Speech API:
 
 - The documentation gives some advice on making more accessible across other browsers (using polyfill), or using fallback content
 
+##Use cases
+
+- Allows the user to navigate the website with their mouse/keyboard + mic + voice (don't have to tab through lots of links to get to the one you want)
+- Voice appears as text on page, could use this for user to input information into a form using their voice, or click a button using their voice
+- Can be used in a translation app to translate what is being said, to help communicate with someone speaking a different language
+
 ```
 
   if (!browserSupportsSpeechRecognition) {
@@ -111,6 +127,10 @@ As of May 2021, the following browser that support the Web Speech API:
 ```
 
 ###How to install and use
+
+###Set up voice navigation video
+
+https://www.youtube.com/watch?v=r3tiBJagbic&ab_channel=AleksPopovic
 
 https://www.npmjs.com/package/react-speech-recognition
 
@@ -156,7 +176,3 @@ const Dictaphone = () => {
 export default Dictaphone;
 
 ```
-
-###Set up voice navigation video
-
-https://www.youtube.com/watch?v=r3tiBJagbic&ab_channel=AleksPopovic
